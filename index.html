@@ -2,37 +2,58 @@
 <head>
     <title>Grid Layout</title>
     <style>
+        body {
+            margin: 40px;
+            font-family: sans-serif;
+        }
+
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            grid-template-rows: auto auto;
-            grid-template-areas: 
-                "leftNav header"
-                "leftNav main";
-            gap: 10px;
+            grid-template-areas:
+                "nav header"
+                "nav main";
+            gap: 20px;
         }
 
-        .first-item {
+        .nav {
+            grid-area: nav;
+            background-color: lightgreen;
+            padding: 20px;
+        }
+
+        .header {
             grid-area: header;
             background-color: lightblue;
+            padding: 20px;
         }
 
-        .second-item {
-            grid-area: leftNav;
-            background-color: lightgreen;
-        }
-
-        .third-item {
+        .main {
             grid-area: main;
             background-color: lightcoral;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
+
+    <h2>Layout 1 – Main is twice as wide as the navigation (correct requirements)</h2>
     <div class="grid-container">
-        <div class="first-item">Header</div>
-        <div class="second-item">Left Navigation</div>
-        <div class="third-item">Main Section</div>
+        <div class="nav">Left Navigation (1fr)</div>
+        <div class="header">Header (2fr – twice the width)</div>
+        <div class="main">Main Section (2fr – twice the width of navigation)</div>
     </div>
+
+    <hr style="margin:60px 0">
+
+    <h2>Layout 2 – Main spans full width on the second row</h2>
+    <div style="display:grid; grid-template-columns:1fr 2fr; gap:20px;">
+        <div style="grid-area:1 / 1 / 4 / 2; background:lightgreen; padding:20px;">Left Navigation (1fr)</div>
+        <div style="grid-area:1 / 2 / 2 / 3; background:lightblue; padding:20px;">Header (2fr)</div>
+        <div style="grid-area:2 / 1 / 4 / 3; background:lightcoral; padding:20px;">
+            Main Section – spans full width (1fr + 2fr)
+        </div>
+    </div>
+
 </body>
 </html>
