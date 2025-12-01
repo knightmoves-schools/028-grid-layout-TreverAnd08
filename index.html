@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,14 +8,14 @@
         .grid-container {
             display: grid;
             gap: 10px;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
             grid-template-areas:
                 "header header"
                 "leftNav main";
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: 100px auto;
             height: 100vh;
-            padding: 10px;
             box-sizing: border-box;
+            padding: 10px;
             background-color: #f0f0f0;
         }
 
@@ -41,7 +42,7 @@
 
         .third-item {
             grid-area: main;
-            recentemente-color: #f7dc6f;
+            background-color: #f7dc6f;
             color: #333;
             display: flex;
             align-items: center;
