@@ -1,13 +1,33 @@
 <html>
-
 <head>
     <title>Grid</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+                "leftNav header"
+                "leftNav main";
+            gap: 10px;
+        }
+
+        .first-item {
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        .second-item {
+            grid-area: leftNav;
+            background-color: lightgreen;
+        }
+
+        .third-item {
+            grid-area: main;
+            background-color: lightcoral;
+        }
     </style>
 </head>
-
 <body>
     <div class="grid-container">
         <div class="first-item">first</div>
@@ -15,5 +35,4 @@
         <div class="third-item">third</div>
     </div>
 </body>
-
 </html>
