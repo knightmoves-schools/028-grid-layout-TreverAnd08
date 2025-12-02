@@ -1,39 +1,28 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-    <title>Fixed Grid Layout - Holy Grail</title>
+    <title>Grid</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { margin: 0; box-sizing: border-box; }
-        body { font-family: sans-serif; }
-
-        .grid-container {
-            height: 100vh; /* full viewport height */
-            display: grid;
-            grid-template-columns: 200px 1fr 200px;  /* left | center | right */
-            grid-template-rows: auto 1fr auto;       /* header | content | footer */
-            grid-template-areas:
-                "header header header"
-                "menu   main   right"
-                "footer footer footer";
-            gap: 10px;
-            padding: 10px;
-            background: #f0f0f0;
-        }
-
-        .item1 { grid-area: header; background: #4a90e2; color: white; padding: 20px; text-align: center; }
-        .item2 { grid-area: menu;   background: #50c878; color: white; padding: 20px; }
-        .item3 { grid-area: main;   background: #f7f7f7; padding: 20px; }
-        .item4 { grid-area: right;  background: #f99157; color: white; padding: 20px; }
-        .item5 { grid-area: footer; background: #333; color: white; padding: 20px; text-align: center; }
+     .grid-container {
+    display: grid;
+    grid-template-areas: 
+   'leftNav header header'
+   'leftNav main main';
+    gap: 10px;
+     }
+    .first-item { grid-area: header; } 
+    .second-item { grid-area: leftNav; }
+    .third-item { grid-area: main; }
     </style>
 </head>
+
 <body>
     <div class="grid-container">
-        <div class="item1">Header</div>
-        <div class="item2">Menu<br>(full-height left sidebar)</div>
-        <div class="item3">Main Content Area</div>
-        <div class="item4">Right Sidebar</div>
-        <div class="item5">Footer</div>
+        <div class="first-item">first</div>
+        <div class="second-item">second</div>
+        <div class="third-item">third</div>
     </div>
 </body>
+
 </html>
